@@ -2,9 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-
 # Specify the path to your .tsv file
-file_path = 'data.tsv'
+file_path = 'TrafficData2024.tsv'
 
 # Read the TSV file using pandas
 try:
@@ -77,30 +76,30 @@ if tsv_df is not None and csv_df is not None:
     sorted_df = merged_df.sort_values(by='S1901_C01_012E', ascending=False)
 
 
-    # Display the first few rows of the merged DataFrame
-    #print("Merged Data:")
-    #print(merged_df.head())
+    #Display the first few rows of the merged DataFrame
+    print("Merged Data:")
+    print(merged_df.head())
 
-    # # Setup the plot
-    # plt.figure(figsize=(10, 6))
+    # Setup the plot
+    plt.figure(figsize=(10, 6))
 
-    # # Scatter plot for income vs stops per capita
-    # plt.scatter(sorted_df['S1901_C01_012E'].head(10), sorted_df['STOPS_PER_CAPITA'].head(10), alpha=0.6)
+    # Scatter plot for income vs stops per capita
+    plt.scatter(sorted_df['S1901_C01_012E'].head(10), sorted_df['STOPS_PER_CAPITA'].head(10), alpha=0.6)
 
-    # # Set plot title and labels
-    # plt.title('Scatter Plot of Income vs Stops Per Capita')
-    # plt.xlabel('Median Income (dollars)')
-    # plt.ylabel('Stops Per Capita')
+    # Set plot title and labels
+    plt.title('Scatter Plot of Income vs Stops Per Capita')
+    plt.xlabel('Median Income (dollars)')
+    plt.ylabel('Stops Per Capita')
 
-    # # Optionally, set limits for axes if needed
-    # # plt.xlim(merged_df[income_column].min(), merged_df[income_column].max())
-    # # plt.ylim(merged_df[stops_column].min(), merged_df[stops_column].max())
+    # Optionally, set limits for axes if needed
+    # plt.xlim(merged_df[income_column].min(), merged_df[income_column].max())
+    # plt.ylim(merged_df[stops_column].min(), merged_df[stops_column].max())
 
-    # # Show grid
-    # plt.grid(True)
+    # Show grid
+    plt.grid(True)
 
-    # # Display the plot
-    # plt.show()
+    # Display the plot
+    plt.show()
 
     # Assuming merged_df is your dataframe with the joined data
     
