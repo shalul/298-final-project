@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 # Specify the path to your .tsv file
+# can change based on tsv file to test, just had this one
 file_path = 'TrafficData2024.tsv'
 
 # Read the TSV file using pandas
@@ -115,7 +116,7 @@ if tsv_df is not None and csv_df is not None:
     # Filter for ZIP codes within the NYC range (10001 to 11210)
     nyc_df = merged_df[
         (merged_df['ZCTA20'] >= 10001) & 
-        (merged_df['ZCTA20'] <= 11210)
+        (merged_df['ZCTA20'] <= 11697)
     ]
 
     # Now filter out any NaN or zero values
@@ -127,7 +128,9 @@ if tsv_df is not None and csv_df is not None:
 
     # Print how many ZIP codes we have in our filtered dataset
     print(f"Number of NYC ZIP codes in analysis: {len(filtered_df)}")
-
+    zcta_income_df = filtered_df[['ZCTA20', 'S1901_C01_012E']].drop_duplicates()
+    zcta_income_df.columns = ['ZCTA', 'Median_Income']
+    zcta_income_df.to_csv('zcta_income_mapping.csv', index=False)
 
     # Create income bins
     num_bins = 10
