@@ -5,11 +5,11 @@ from matplotlib import cm
 from matplotlib import colors
 
 # Load ZIP-level transit density data
-density = pd.read_csv("zip_avg_transit_density.csv")
+density = pd.read_csv("heatmap/zip_avg_transit_density.csv")
 density["ZCTA5CE10"] = density["ZCTA5CE10"].astype(float).astype(int).astype(str).str.zfill(5)
 
 # Load ZIP-level income data
-income = pd.read_csv("zcta_income_mapping.csv")
+income = pd.read_csv("heatmap/zcta_income_mapping.csv")
 income["ZCTA"] = income["ZCTA"].astype(str).str.zfill(5)
 income = income.rename(columns={"ZCTA": "ZCTA5CE10"})
 # Merge density and income on ZIP code
