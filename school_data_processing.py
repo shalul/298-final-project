@@ -18,6 +18,10 @@ tl_2020_us_zcta510.prj
 tl_2020_us_zcta510.shp
 tl_2020_us_zcta510.shx
 
+Dataset links:
+https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr/about_data
+https://catalog.data.gov/dataset/tiger-line-shapefile-2020-nation-u-s-2010-5-digit-zip-code-tabulation-areas-zcta5 
+
 Note that only two of these are called explicitly, but those calls call the other files implicitly, so all files are needed
 '''
 
